@@ -9,33 +9,52 @@ public class Main {
     user1.setName("Gökay");
     user1.setSurName("Baz");
     
-    InstructorUser user2 = new InstructorUser();
+    User user2 = new User();
     user2.setId(1);
-    user2.setInstructorId("jv-egt01");
-    user2.setInstructorRole("Java Eðitmeni");
-    user2.setName("Engin");
-    user2.setSurName("Demiroð");
+    user2.setName("Kodlama.io");
+    user2.setSurName("Java Kampý");
     
-    StudentUser user3 = new StudentUser();
-    user3.setId(2);
-    user3.setStudentId("jv-std-01");
-    user3.setName("Gökay");
-    user3.setSurName("Baz");
+    InstructorUser instructorUser = new InstructorUser();
+    instructorUser.setId(1);
+    instructorUser.setInstructorId("jv-egt01");
+    instructorUser.setInstructorRole("java eðitmeni");
+    instructorUser.setName("Engin");
+    instructorUser.setSurName("Demiroð");
+    
+    StudentUser studentUser = new StudentUser();
+    studentUser.setId(2);
+    studentUser.setStudentId("jv-std-01");
+    studentUser.setName("Gökay");
+    studentUser.setSurName("Baz");
     
     UserManager userManager = new UserManager();
     System.out.println("Tek kullanýcý ekleme");
     System.out.println("--------------------------");
     userManager.addUser(user1);
     System.out.println("--------------------------");
+    System.out.println("---------------------------");
 
     User[] userList = {
     	user1,
     	user2,
-    	user3
     };
     System.out.println("Çoklu kullanýcý ekleme");
     System.out.println("---------------------------");
     userManager.addMultipleUser(userList);
+    System.out.println("---------------------------");
+    System.out.println("---------------------------");
+    System.out.println("Öðrenci ekleme");
+    System.out.println("---------------------------");
+    StudentManager studentManager = new StudentManager();
+    studentManager.addStundent(studentUser);
+    System.out.println("---------------------------");
+    System.out.println("---------------------------");
+    System.out.println("Eðitmen ekleme");
+    System.out.println("---------------------------");
+    InstructorManager instructorManager = new InstructorManager();
+    instructorManager.addInstructor(instructorUser);
+    
+    
 	}
 
 }
